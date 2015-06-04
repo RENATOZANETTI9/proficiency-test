@@ -1,0 +1,18 @@
+<h2>Nova matrícula</h2>
+<%= form_for(@classroom) do |f| %>
+  <%= render 'shared/errors', object: f.object %>
+  <p>
+    <%= f.label :student, "Estudante" %><br />
+    <%= f.collection_select(:classroom,:student_id,@students,:id,:name) %>
+  <p>
+    <%= f.label :course, "Curso" %><br />
+    <%= f.collection_select(:classroom,:course_id,@courses,:id,:name) %>
+  </p>
+  <p>
+    <%= f.label :entry_at, "Data/Hora" %><br />
+    <%= f.text_field :entry_at, :class => "timepicker" %>
+  </p>
+  <p>
+     <%= f.submit "Criar matricula" %>
+  </p>
+<% end %>

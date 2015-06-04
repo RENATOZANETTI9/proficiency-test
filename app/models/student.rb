@@ -1,0 +1,12 @@
+class Student < ActiveRecord::Base
+	 #Validação do tamanho dos campos
+	 validates_length_of :name, minimum: 5, maximum: 45, allow_blank: false
+	 validates_length_of :register_number, minimum: 1, maximum: 45, allow_blank: false
+
+	 #Validação dos campos únicos
+	 validates_uniqueness_of :name
+	 validates_uniqueness_of :register_number
+
+	 #Foreign Key 
+	 has_many :classroom, :dependent => :destroy
+end

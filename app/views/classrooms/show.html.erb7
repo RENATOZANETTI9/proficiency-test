@@ -1,0 +1,4 @@
+<h2>Estudante: <%= @classroom.student.name %></h2>
+<p>Curso: <%= @classroom.course.name %></p>
+<p>Data de Matrícula<%= @classroom.entry_at %></p>
+

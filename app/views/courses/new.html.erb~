@@ -1,0 +1,14 @@
+<h2>Novo Curso</h2>
+<%= form_for(@course) do |f| %>
+  <p>
+    <%= f.label :name, "Nome" %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description, "Descrição" %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+     <%= f.submit "Criar curso" %>
+  </p>
+<% end %>

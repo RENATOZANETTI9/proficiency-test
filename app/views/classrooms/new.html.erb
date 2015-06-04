@@ -1,0 +1,20 @@
+<h2>Nova matrícula</h2>
+<%= form_for(@classroom) do |f| %>
+  <%= render 'shared/errors', object: f.object %>
+  <p>
+    <%= f.label :student_id, "Estudante" %><br />
+    <!--<%= f.collection_select(:student,Student.all,:id,:name,prompt: true) %>-->
+    <%= f.select :student_id, Student.all.collect {|c| [c.name, c.id]} %>
+  <p>
+    <%= f.label :course_id, "Curso" %><br />
+    <!--<%= f.collection_select(:course,Course.all,:id,:name,prompt: true) %>-->
+    <%= f.select :course_id, Course.all.collect {|c| [c.name, c.id]} %>
+  </p>
+  <p>
+    <%= f.label :entry_at, "Data/Hora" %><br />
+    <%= f.datetime_select(:entry_at) %>
+  </p>
+  <p>
+     <%= f.submit "Criar matrícula" %>
+  </p>
+<% end %>

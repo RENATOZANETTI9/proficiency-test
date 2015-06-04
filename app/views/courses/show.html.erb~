@@ -1,0 +1,2 @@
+<h2><%= @student.name %></h2>
+<p><%= @student.register_number %></p>

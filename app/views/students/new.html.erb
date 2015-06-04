@@ -1,0 +1,15 @@
+<h2>New Student</h2>
+<%= form_for(@student) do |f| %>
+  <%= render 'shared/errors', object: f.object %>
+  <p>
+    <%= f.label :name, "Nome" %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :register_number, "Número do Registro" %><br />
+    <%= f.text_field :register_number %>
+  </p>
+  <p>
+     <%= f.submit "Criar estudante" %>
+  </p>
+<% end %>

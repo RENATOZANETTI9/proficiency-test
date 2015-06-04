@@ -1,0 +1,15 @@
+require "rails_helper"
+
+feature 'Criando Cursos' do
+  scenario "posso criar um curso" do
+    visit '/'
+
+    click_link 'Novo Curso'
+
+    fill_in 'Nome', with: 'Curso 1'
+    fill_in 'Descrição', with: 'Descrição do curso 1 (um)'
+    click_button 'Criar curso'
+
+    expect(page).to have_content('Curso foi criado.')
+  end
+end
